@@ -4,13 +4,16 @@ class Ball {
   PVector pos;
   PVector vel;
 
+  int col ;
+  color[] colarray = new color[99];
+
+
+
 
   Ball( float x, float y, float _radius) {
     pos = new PVector(x, y);
     vel = new PVector(random(-3, 3), random(-3, 3));
     radius = _radius;
-    
-    
   }
 
   void update() {
@@ -26,8 +29,15 @@ class Ball {
   }
 
   void draw() {
-    ellipse(pos.x, pos.y, radius , radius);
-    fill(random(0, 256), random(0,256), random(0,256));
-    
+    ellipse(pos.x, pos.y, radius, radius);
+
+    // I am still trying to figure out changing each ball to a different color
+
+    for (int i = 0; i < colarray.length; i++) {
+      if (colarray[i] <100 ) {
+        colarray [i] ++;
+        //fill(col);
+      }
+    }
   }
 }
