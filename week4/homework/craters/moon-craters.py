@@ -16,25 +16,40 @@ parser = etree.HTMLParser()
 
 def get_coords(url):
     res = requests.get(url)
-
     tree = etree.fromstring(res.text, parser)
     coords = tree.xpath('//span[@class="geo"]/text()')
-
     return coords
+
+def get_diam(url):
+    res = requests.get(url)
+    tree = etree.fromstring(res.text, parser)
+    diam = tree.xpath('//tbody[1]/tr/td[3]/text()')
+
+    return diam
 
 
 all_coords = []
+all_diams = []
+
 for url in urls:
     coords = get_coords(url)
+    diams = get_diam(url)
     all_coords += coords
-    #  ^ this is the same as all_coords.extend(coords)
+    all_diams += diams
 
     print('added {} coords'.format(len(coords)))
+    print('added {} diams'.format(len(diams)))
 
-print('total of {}'.format(len(all_coords)))
+print('total of {} coords'.format(len(all_coords)))
+print('total of {} diams'.format(len(all_diams)))
+
+i = 0
 
 with open('moon_crater_coords.csv', 'w') as f:
-    f.write('lat,lon\n')
+    f.write('lat,lon,diams\n')
     for coord in all_coords:
+        diam = all_diams[i]
         lat, lon = coord.split('; ')
-        f.write('{},{}\n'.format(lat, lon))
+
+        f.write('{},{},{}\n'.format(lat, lon,diam))
+        i+=1

@@ -1,0 +1,13 @@
+Station,Lat,Lon,line
+Homerton,51.5471,-0.04323,['London Overground']
+HackneyCentral,51.54689,-0.05784,['London Overground']
+DalstonKingsland,51.54832,-0.07879,['London Overground']
+Canonbury,51.54822,-0.09632,['London Overground']
+HighburyIslington,51.54502,-0.10752,"['London Overground', 'Victoria', 'Northern City']"
+KingsCross,51.53057,-0.12399,Victoria
+Euston,51.52774,-0.13303,['Northern']
+WarrenStreet,51.5245,-0.1381,"['Northern', 'Victoria']"
+OxfordCircus,51.51517,-0.14119,"['Bakerloo', 'Central', 'Victoria']"
+GreenPark ,51.50674,-0.14276,"['Jubilee', 'Piccadilly', 'Victoria']"
+Victoria ,51.49662869,-0.14400853,"['Circle', 'District', 'Victoria']"
+SloaneSquare,51.49258474,-0.156090904,"['Central', 'District']"
