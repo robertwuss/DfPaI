@@ -34,7 +34,7 @@ void draw() {
 
       for (int i = 0; i < numPixels; i++) {
 
-        
+
         // Fetch the current color in that location, and also the color
         // of the background in that spot
         color currColor = capture.pixels[i];
@@ -63,7 +63,7 @@ void draw() {
         //Thresholds the captured pixels for webcam
         if (presenceSum > 150) {
 
-          pixels[i] = capture.pixels[i]; 
+          pixels[i] = capture.pixels[i];
         } else {
           pixels[i] = sunflowerBackground.pixels[i];
         }

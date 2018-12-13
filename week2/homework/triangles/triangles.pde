@@ -2,6 +2,7 @@ class Triangle {
   PVector pos;
   float rotation;
 
+
   Triangle(float x, float y) {
     pos = new PVector(x, y);
   }
@@ -16,6 +17,7 @@ class Triangle {
 
   void draw() {
 
+    // we must double translate then use the faceTowards function
     stroke(255, 0, 120);
     pushMatrix(); 
     translate(pos.x, pos.y);
@@ -25,6 +27,7 @@ class Triangle {
     popMatrix();
   }
 }
+//creat new arrayList in order to add more triangles. 
 ArrayList<Triangle> friends = new ArrayList<Triangle>();
 
 void setup() {

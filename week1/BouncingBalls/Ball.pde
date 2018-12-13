@@ -4,6 +4,7 @@ class Ball {
   PVector pos;
   PVector vel;
   int r, g, b;
+  float maxVel = 2;
 
 
 
@@ -29,9 +30,19 @@ class Ball {
     if (pos.y < radius || pos.y > height - radius) {
       vel.y *= -1;
     }
+    
+    // move ball to location when mouse pressed
+    if (mousePressed) {
+      PVector newVel= new PVector(mouseX - pos.x, mouseY-pos.y);
+      newVel.normalize();
+      vel.add(newVel);
+    }
+    
+     // limit speed of balls
+    vel.limit(maxVel);
   }
 
-  //double loop
+  //double loop to handle the ball collissions. I am checking for the check of two radius's then creating a new velocity to bounce them off each other
 
   void handleCollisions(Ball[] balls) {
     for (Ball b : balls) {

@@ -1,3 +1,5 @@
+
+//function for the smiley face
 void mySmiley(int x, int y) {
 
   fill(255, 255, 0);
@@ -6,7 +8,6 @@ void mySmiley(int x, int y) {
   ellipse(x * 25 +6, y * 25 +6, 3, 3);
   ellipse(x * 25 +15, y * 25 + 6, 3, 3);
   ellipse(x * 25 +10, y * 25 +15, 5, 5);
-
 }
 
 void setup() {
